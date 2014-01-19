@@ -82,7 +82,7 @@ production:
       options:
         consistency: :strong
   options:
-    identity_map_enabled: true    
+    #identity_map_enabled: true    
         
 staging:
   <<: *development
