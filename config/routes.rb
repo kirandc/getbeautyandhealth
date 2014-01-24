@@ -2,6 +2,9 @@ Getbeautyandhealth::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resource :home
+  match 'products/:category' => 'home#products', as: :products, via: [:get]
+  match 'contact_us' => 'home#contact_us', as: :contact_us, via: [:get]
   # You can have the root of your site routed with "root"
   root 'home#index'
 
