@@ -1,0 +1,6 @@
+$('.navbar').after("#{escape_javascript(render "layouts/notification", message_type: "success", message: "Your message sent sucessfully." )}");
+$("#message").modal("hide")
+$('.modal-scrollable').hide()
+$('.modal-backdrop').hide()
+setTimeout(function(){('.alert-success .close').click()}, 5000);
+

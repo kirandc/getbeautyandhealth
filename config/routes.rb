@@ -5,6 +5,7 @@ Getbeautyandhealth::Application.routes.draw do
   resource :home
   match 'products/:category' => 'home#products', as: :products, via: [:get]
   match 'contact_us' => 'home#contact_us', as: :contact_us, via: [:get]
+  match 'send_email' => 'home#send_email', as: :send_email, via: [:post]
   # You can have the root of your site routed with "root"
   root 'home#index'
 

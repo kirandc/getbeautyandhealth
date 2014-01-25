@@ -1,0 +1,92 @@
+- provide(:title, 'Home')
+.impact
+  .container
+    .row
+      .col-md-9
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/amway1.jpg"}
+      .col-md-3
+        %h3
+          Deepak Chaudhari
+        %span.glyphicon.glyphicon-envelope
+          %a{"data-toggle" => "modal", :href => "#message"}
+            Email Me
+        %p        
+        %span.glyphicon.glyphicon-earphone
+          (920) 750-4818
+        %p{style: "margin:10px 0px;"}
+          IRVING, TX 75038-3193
+        %br
+        %p{style: "color:#428BCA"}
+          Welcome! If you enjoy finding new products that fit your lifestyle, you’ll love what’s “in store!”
+    %br
+    %br
+    %br
+    .row
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari", style:"margin-left:25px;"}
+          %img{src: "/assets/weight.jpg", style: "height:73px"}
+          %br
+          %br
+          %p{style: "padding: 10px 0px:"} Weight Management
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/skin.jpg"}
+          %br
+          %br
+          %p{style: "padding: 10px 0px:"}  Anti-aging Skin Care        
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/home.jpg"}
+          %br
+          %br
+          %p{style:"margin-left:40px"} Home
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/oral_care.jpg"}
+          %br
+          %br
+          %p{style:"margin-left:40px"} Oral Care
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/xs.jpg"}
+          %br
+          %br
+          %p{style:"margin-left:50px"} XS
+      .col-md-2
+        %a{href: "http://www.amway.com/DeepakChaudhari"}
+          %img{src: "/assets/gift.jpg"}
+          %br
+          %br
+          %p{style:"margin-left:50px"}  Gift
+
+
+#message.modal.container.fade{"data-width" => "500", :tabindex => "-1"}
+  = form_tag send_email_path, class: "form-horizontal modal-fixed-form", method: "post", remote: true do
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Email Me
+    .modal-body
+      %p.pull-right
+        * Indicates Required Field
+      .form-group
+        .col-md-6
+          %label.control-label Your Name: *
+          = text_field_tag "name", nil, class: "form-control"
+      .form-group
+        .col-md-8
+          %label.control-label Your Email: *
+          = text_field_tag "name", nil, class: "form-control"
+      .form-group
+        .col-md-6
+          %label.control-label Your Phone:
+          = text_field_tag "name", nil, class: "form-control"
+      .form-group
+        .col-md-6
+          %label.control-label Message: *
+          = text_area_tag "name", nil, class: "form-control"
+    .modal-footer
+      = submit_tag  "Submith", class: 'btn btn-success', data: { :disable_with => "Searching..." }
+      %a.btn.btn-danger{"data-dismiss" => "modal"} Cancel
+
+

@@ -14,7 +14,7 @@
     = csrf_meta_tags
     %link{:href => "/assets/favicon.ico", :rel => "shortcut icon"}/
   %body{"data-spy" => "scroll", "data-target" => ".qc-sidenav"}
-    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation", style: 'background: #9eba55;'}
+    .navbar.navbar-inverse{:role => "navigation", style: 'background: #9eba55;'}
       .container
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -25,20 +25,18 @@
           %a.navbar-brand{:href => root_path, style: 'font-size:30px; margin-top: 10px;color:white' }
             %strong Get Beauty & Health
         .navbar-collapse.collapse
-          .nav.navbar-nav.navbar-left
+          .nav.navbar-nav.navbar-right
             %ul.nav.navbar-nav
               %li
-                %a{:href => "http://www.amway.com/DeepakChaudhari"} Amway Products Online
-              %li{class: "#{'active' if @menu == 'nutrition_and_wellness'}"}
-                %a{:href => products_path(category: "nutrition_and_wellness")} Nutrition & Wellness
+                %a{:href => products_path(category: "nutrition")} Nutrition
               %li{class: "#{'active' if @menu == 'beauty'}"}
                 %a{:href => products_path(category: "beauty")} Beauty
-              %li{class: "#{'active' if @menu == 'home_care'}"}
-                %a{:href => products_path(category: "home_care")} Home Care
-              %li{class: "#{'active' if @menu == 'personal_care'}"}
-                %a{:href => products_path(category: "personal_care")} Personal Care
-              %li{class: "#{'active' if @menu == 'contact_us'}"}
-                %a{:href => contact_us_path} Contact Us
+              %li{class: "#{'active' if @menu == 'bath_and_baby'}"}
+                %a{:href => products_path(category: "bath_and_baby")} Bath & Baby
+              %li{class: "#{'active' if @menu == 'at_home'}"}
+                %a{:href => products_path(category: "at_home")} At Home
+              %li{class: "#{'active' if @menu == 'more_product'}"}
+                %a{:href => products_path(category: "more_products")} More Products
     #main
       = yield 
     #footer

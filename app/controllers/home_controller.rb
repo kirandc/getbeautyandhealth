@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  PRODUCT = ['nutrition_and_wellness', 'beauty', 'home_care', 'personal_care']
+  PRODUCT = ['nutrition', 'beauty', 'bath_and_baby', 'at_home', 'more_products']
 
   def index
   end
@@ -7,14 +7,16 @@ class HomeController < ApplicationController
   def products
    if params[:category] and PRODUCT.include?(params[:category])
      @menu = params[:category]
-     if params[:category] == "nutrition_and_wellness"  
-       render "nutrition_and_wellness"
+     if params[:category] == "nutrition"  
+       render "nutrition"
      elsif params[:category] == "beauty"  
        render "beauty"
-     elsif params[:category] == "home_care"  
-       render "home_care"
-     elsif params[:category] == "personal_care"  
-       render "personal_care"
+     elsif params[:category] == "bath_and_baby"  
+       render "bath_and_baby"
+     elsif params[:category] == "at_home"  
+       render "at_home"
+     elsif params[:category] == "more_products"  
+       render "more_products"
      else
        redirect_to root_path
      end
@@ -23,7 +25,8 @@ class HomeController < ApplicationController
    end
   end
 
-  def contact_us
-    @menu = "contact_us"
+  def send_email
+    unless params[:email].blank?
+    end
   end
 end
