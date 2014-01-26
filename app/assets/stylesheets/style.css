@@ -57,6 +57,18 @@ body {
   color: #FFFFFF;
 }
 
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #9EBA55;
+  color: #000000;
+}
+
+.navbar-collapse li a {
+  color: #000000;
+  font-size: 15px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
 /**************************************FOOTER********************************************/
 
 

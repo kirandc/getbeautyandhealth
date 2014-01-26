@@ -27,18 +27,60 @@
         .navbar-collapse.collapse
           .nav.navbar-nav.navbar-right
             %ul.nav.navbar-nav
-              %li
-                %a{:href => products_path(category: "nutrition")} Nutrition
-              %li{class: "#{'active' if @menu == 'beauty'}"}
-                %a{:href => products_path(category: "beauty")} Beauty
-              %li{class: "#{'active' if @menu == 'bath_and_baby'}"}
-                %a{:href => products_path(category: "bath_and_baby")} Bath & Baby
-              %li{class: "#{'active' if @menu == 'at_home'}"}
-                %a{:href => products_path(category: "at_home")} At Home
-              %li{class: "#{'active' if @menu == 'more_product'}"}
-                %a{:href => products_path(category: "more_products")} More Products
-    #main
-      = yield 
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => "dropdown", href: "#"} Nutrition
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Vitamins-Supplements"} Vitamins & Supplements
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Weight-Management"} Weight Management
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Sports-Nutrition"} Sport Nutrition
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx?_sort=Newest|D&dsnav=N:4294966625"} Energy Drinks
+                  %li
+                    %a{:href => "#"} Kid’s Special
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => "dropdown", href: "#"} Beauty
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/skincare"} Skin Care
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/makeup"} Make up
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/beauty/artistry/youth-xtend"} Youth Extend
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => "dropdown", href: "#"} Bath & Baby
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Hair-Care"} Hair Care
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Body-Care"} Body Care
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Oral-Care"} Oral Care
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => "dropdown", href: "#"} At Home
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Laundry"} Laundry
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Surface-Cleaners"} Surface Cleaner
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Dish-Detergent"} Dish Detergen
+              %li.dropdown
+                %a.dropdown-toggle{'data-toggle' => "dropdown", href: "#"} More Products
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/gift-cards-by-ribbon?_va=y&_sort=Item|A"} Gift Cards by Ribbon
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Jewelry-Accessories"} Jewelry & Accessories
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Fragrances"} Fragrances
+                  %li
+                    %a{:href => "http://www.amway.com/DeepakChaudhari/Shop/Product/Category.aspx/Food-Beverage"} Food & Beverages
+              %li{class: "#{'active' if @menu == 'contact_us'}"}
+                %a{:href => contact_us_path} Contact Us
+    = yield 
     #footer
       .container
         %p.pull-right
