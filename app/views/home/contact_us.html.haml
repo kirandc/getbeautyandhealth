@@ -1,24 +1,35 @@
 .container
   = render "layouts/notification"
-  = form_tag contacts_path, class: "form-horizontal modal-fixed-form", method: "post", remote: true do
+  = form_for @contact, url: contacts_path, html: {class: "form-horizontal modal-fixed-form"} do |f|
     %h3 Contact Us
     .form-group
       .col-md-12
         %p We never share your information. Any information we gather is only for the purpose of replying to your message.
         %p.pull-left
           * Indicates Required Field
+        - if @contact.errors.any?
+          %br
+          %p
+            %ul
+              - @contact.errors.full_messages.each do |msg|
+                %li{style: "color:red"} 
+                  = msg
     .form-group
       .col-md-4
         %label.control-label Name: *
-        = text_field_tag "name", nil, class: "form-control"
+        = f.text_field "name", class: "form-control"
     .form-group
       .col-md-4
         %label.control-label Email Address: *
-        = text_field_tag "name", nil, class: "form-control"
+        = f.text_field "email", class: "form-control"
+    .form-group
+      .col-md-4
+        %label.control-label Phone No: *
+        = f.text_field "phone", class: "form-control"
     .form-group
       .col-md-6
         %label.control-label Message: *
-        = text_area_tag "name", nil, class: "form-control"
+        = f.text_area "message", class: "form-control"
     = submit_tag  "Submit", class: 'btn btn-success', data: { :disable_with => "Searching..." }
     %a.btn.btn-danger{"data-dismiss" => "modal"} Cancel
 
