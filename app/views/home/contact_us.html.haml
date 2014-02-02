@@ -31,6 +31,6 @@
         %label.control-label Message: *
         = f.text_area "message", class: "form-control"
     = submit_tag  "Submit", class: 'btn btn-success', data: { :disable_with => "Searching..." }
-    %a.btn.btn-danger{"data-dismiss" => "modal"} Cancel
+    %a.btn.btn-danger{href: root_path} Cancel
 
 

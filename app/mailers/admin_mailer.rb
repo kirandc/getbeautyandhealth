@@ -4,7 +4,7 @@ class AdminMailer < ActionMailer::Base
     @message = contact.message
     @name = contact.name
     @phone = contact.phone
-    mail(to: "kiran_dc2004@yahoo.com", from: @email, subject: "Get Beauty & Health Contact Message from #{@email}")
+    mail(to: "Get Beauty & Health <kiran_dc2004@yahoo.com>", from: @email, subject: "Get Beauty & Health Contact Message from #{@email}")
   end
 
 end

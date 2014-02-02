@@ -4,8 +4,12 @@ body {
   font-family: MuseoSans-300, "Helvetica Neue", Helvetica, Arial;
 }
 
+.container a, .col-md-12 a {
+  text-decoration: none;
+}
+
 #main { /*contents between header and footer inside body*/
-  padding-top: 91px;
+  padding-top: 5px;
 }
 
 /**************************************HEADER********************************************/
